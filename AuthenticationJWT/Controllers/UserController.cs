@@ -26,10 +26,10 @@ namespace AuthenticationJWT.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Admin Endpoint where only Admin user can retrieve data
         /// </summary>
-        /// <returns></returns>
-        [HttpGet]
+        /// <returns>Logged user with its role</returns>
+        [HttpGet("Admin")]
         [Authorize(Roles = "Admin")]
         public IActionResult AdminEndPoint()
         {
@@ -38,9 +38,9 @@ namespace AuthenticationJWT.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Verkaufer Endpoint where only Seller user can retrieve data
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Logged user with its role</returns>
         [HttpGet("Verkaufer")]
         [Authorize(Roles = "Verkaufer")]
         public IActionResult VerkauferEndPoint()

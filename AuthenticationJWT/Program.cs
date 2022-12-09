@@ -31,6 +31,7 @@ builder.Services.AddSwaggerGen(c =>
         BearerFormat = "JWT",
         Scheme = "bearer"
     });
+
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {

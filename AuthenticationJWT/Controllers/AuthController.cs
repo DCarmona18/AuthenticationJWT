@@ -37,10 +37,26 @@ namespace AuthenticationJWT.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Simulates login endpoint:
+        /// To test this endpoint use the following users
         /// </summary>
-        /// <param name="req"></param>
-        /// <returns></returns>
+        /// <remarks>
+        /// Sample request for admin:
+        /// 
+        ///     POST api/Auth
+        ///     {        
+        ///       "userName": "daniel.carmona.jaramillo@gmail.com",
+        ///       "password": "123456"       
+        ///     }
+        ///     Sample request for verkaufer:
+        /// 
+        ///     POST api/Auth
+        ///     {        
+        ///       "userName": "andereEmail@mail.com",
+        ///       "password": "123456"       
+        ///     }
+        /// </remarks>
+        /// <param name="req"></param> 
         [HttpPost, AllowAnonymous]
         public async Task<ActionResult<JwtResponse>> Validate(UserValidationRequestModel req)
         {
