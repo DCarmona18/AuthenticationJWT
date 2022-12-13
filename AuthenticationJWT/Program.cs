@@ -21,7 +21,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "You api title", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "JWT Authentication/Authorization API - TEST", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -79,7 +79,7 @@ var users = new List<User>
             new User
             {
                 Id= 1,
-                Email = "daniel.carmona.jaramillo@gmail.com",
+                Email = "dcarmona",
                 Password = "123456",
                 Name = "Daniel Carmona",
                 Role = "Admin"
@@ -87,7 +87,7 @@ var users = new List<User>
             new User
             {
                 Id= 2,
-                Email = "andereEmail@mail.com",
+                Email = "andere",
                 Password = "123456",
                 Name = "Jemanden",
                 Role = "Verkaufer"
@@ -95,7 +95,6 @@ var users = new List<User>
         };
 
 db!.Users.AddRange(users);
-
 db.SaveChanges();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -45,20 +45,20 @@ namespace AuthenticationJWT.Controllers
         /// 
         ///     POST api/Auth
         ///     {        
-        ///       "userName": "daniel.carmona.jaramillo@gmail.com",
+        ///       "userName": "dcarmona",
         ///       "password": "123456"       
         ///     }
         ///     Sample request for verkaufer:
         /// 
         ///     POST api/Auth
         ///     {        
-        ///       "userName": "andereEmail@mail.com",
+        ///       "userName": "andere",
         ///       "password": "123456"       
         ///     }
         /// </remarks>
         /// <param name="req"></param> 
         [HttpPost, AllowAnonymous]
-        public async Task<ActionResult<JwtResponse>> Validate(UserValidationRequestModel req)
+        public async Task<ActionResult<JwtResponse>> Login(UserValidationRequestModel req)
         {
             if (req is UserValidationRequestModel)
             {
